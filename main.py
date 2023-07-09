@@ -25,3 +25,13 @@ df.drop('timestamp',axis=1,inplace=True)
 print(df.info())
 
 
+print(df['ratings'].describe().transpose())
+
+print(f'Minimum rating is:{df.ratings.min()}' )
+print(f'Maximum rating is: {df.ratings.max()}')
+
+print('Number of missing values across columns: \n',df.isnull().sum())
+
+
+plt.hist(df["ratings"])
+plt.show()
