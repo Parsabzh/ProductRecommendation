@@ -12,6 +12,16 @@ from sklearn.neighbors import NearestNeighbors
 import scipy.sparse
 from scipy.sparse import csr_matrix
 from scipy.sparse.linalg import svds
+import gzip
 
-df= pd.read_csv("ds.csv")
+
+columns=['userId', 'productId', 'ratings','timestamp']
+df=pd.read_csv('all_csv_files.csv',names=columns,nrows=10_000_000)
+
 print(df.describe())
+print(df.head())
+
+df.drop('timestamp',axis=1,inplace=True)
+print(df.info())
+
+
